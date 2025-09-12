@@ -1,18 +1,24 @@
 {
   "expo": {
     "name": "FixMo",
-    "slug": "FixMo",
+    "slug": "fixmo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "fixmo",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSCameraUsageDescription": "This app needs access to your camera to take profile pictures.",
-        "NSMicrophoneUsageDescription": "This app needs access to your microphone for recording audio."
+        "NSCameraUsageDescription": "This app needs access to your camera to take profile pictures and document photos.",
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone for recording audio.",
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to provide location-based services."
       }
     },
     "android": {
@@ -23,7 +29,9 @@
       "edgeToEdgeEnabled": true,
       "permissions": [
         "android.permission.CAMERA",
-        "android.permission.RECORD_AUDIO"
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
       ]
     },
     "web": {
@@ -36,7 +44,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -48,6 +56,12 @@
           "cameraPermission": "Allow FixMo to access your camera",
           "microphonePermission": "Allow FixMo to access your microphone",
           "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow FixMo to use your location to provide location-based services."
         }
       ]
     ],
